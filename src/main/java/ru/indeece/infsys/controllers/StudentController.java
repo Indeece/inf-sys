@@ -23,7 +23,7 @@ public class StudentController {
     @PostMapping("/add")
     @Operation(summary = "Add student", description = "Adds a new student")
     private ResponseEntity<Student> addStudent(@Parameter(description = "student entity",
-            example = "Student stuednt") @RequestBody Student student) {
+            example = "Student student") @RequestBody Student student) {
         log.info("POST /api/v1/add | email: {}", student.getEmail());
         return ResponseEntity.ok(studentService.saveStudent(student));
     }
