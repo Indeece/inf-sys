@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.indeece.infsys.InfSysApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-27T07:55:53.347Z" hostname="DESKTOP-EN34SN7" time="12.696">
+  <properties/>
+  <testcase name="contextLoads()" classname="ru.indeece.infsys.InfSysApplicationTests" time="0.726"/>
+  <system-out><![CDATA[10:55:53.662 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [ru.indeece.infsys.InfSysApplicationTests]: InfSysApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+10:55:53.872 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration ru.indeece.infsys.InfSysApplication for test class ru.indeece.infsys.InfSysApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.3)
+
+2026-02-27T10:55:54.682+03:00  INFO 2388 --- [inf-sys] [    Test worker] r.indeece.infsys.InfSysApplicationTests  : Starting InfSysApplicationTests using Java 24.0.1 with PID 2388 (started by User in D:\2026 java projects\Delivery\inf-sys)
+2026-02-27T10:55:54.684+03:00  INFO 2388 --- [inf-sys] [    Test worker] r.indeece.infsys.InfSysApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2026-02-27T10:55:56.053+03:00  INFO 2388 --- [inf-sys] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-27T10:55:56.056+03:00  INFO 2388 --- [inf-sys] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27T10:55:56.277+03:00  INFO 2388 --- [inf-sys] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 204 ms. Found 1 JPA repository interface.
+2026-02-27T10:55:56.358+03:00  INFO 2388 --- [inf-sys] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-27T10:55:56.361+03:00  INFO 2388 --- [inf-sys] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-27T10:55:56.396+03:00  INFO 2388 --- [inf-sys] [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface ru.indeece.infsys.repository.StudentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-27T10:55:56.396+03:00  INFO 2388 --- [inf-sys] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2026-02-27T10:55:57.046+03:00  INFO 2388 --- [inf-sys] [    Test worker] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-27T10:55:57.141+03:00  INFO 2388 --- [inf-sys] [    Test worker] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-02-27T10:55:58.149+03:00  INFO 2388 --- [inf-sys] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27T10:55:58.287+03:00  INFO 2388 --- [inf-sys] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-27T10:55:59.420+03:00  INFO 2388 --- [inf-sys] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3696d12d
+2026-02-27T10:55:59.422+03:00  INFO 2388 --- [inf-sys] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-27T10:56:01.129+03:00  INFO 2388 --- [inf-sys] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/infsys]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 15.14
+	Default catalog/schema: infsys/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-27T10:56:02.542+03:00  INFO 2388 --- [inf-sys] [    Test worker] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-27T10:56:02.769+03:00  INFO 2388 --- [inf-sys] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27T10:56:02.904+03:00  INFO 2388 --- [inf-sys] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-27T10:56:03.524+03:00  WARN 2388 --- [inf-sys] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27T10:56:03.615+03:00  INFO 2388 --- [inf-sys] [    Test worker] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-02-27T10:56:05.291+03:00  INFO 2388 --- [inf-sys] [    Test worker] r.indeece.infsys.InfSysApplicationTests  : Started InfSysApplicationTests in 11.138 seconds (process running for 15.519)
+]]></system-out>
+  <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\User\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.17.8\f09415827a71be7ed621c7bd02550678f28bc81c\byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
