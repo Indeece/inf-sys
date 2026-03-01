@@ -9,14 +9,23 @@ spring:
     url: jdbc:postgresql://localhost:5432/infsys
 
   jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: public
     hibernate:
       ddl-auto: create
+    defer-datasource-initialization: true
 
   data:
     redis:
       host: redis
       port: 6379
-
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
 
 server:
   port: 8081

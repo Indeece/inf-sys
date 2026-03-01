@@ -12,6 +12,8 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
 @Configuration
 @EnableCaching
@@ -19,7 +21,7 @@ public class RedisCacheConfig {
 
     @Bean
     public CacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
-        RedisCacheConfiguration cacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()
+        RedisCacheConfiguration defaultCacheConfig = RedisCacheConfiguration.defaultCacheConfig()
                 .entryTtl(Duration.ofMinutes(30))
                 .disableCachingNullValues()
                 .serializeKeysWith(
@@ -29,14 +31,59 @@ public class RedisCacheConfig {
                         RedisSerializationContext.SerializationPair.fromSerializer(RedisSerializer.java())
                 );
 
+        Map<String, RedisCacheConfiguration> cacheConfigurations = new HashMap<>();
+
+        cacheConfigurations.put("students", RedisCacheConfiguration.defaultCacheConfig()
+                .entryTtl(Duration.ofHours(1))
+                .serializeValuesWith(
+                        RedisSerializationContext.SerializationPair.fromSerializer(RedisSerializer.java())
+                ));
+
+        cacheConfigurations.put("professors", RedisCacheConfiguration.defaultCacheConfig()
+                .entryTtl(Duration.ofHours(2))
+                .serializeValuesWith(
+                        RedisSerializationContext.SerializationPair.fromSerializer(RedisSerializer.java())
+                ));
+
+        cacheConfigurations.put("departments", RedisCacheConfiguration.defaultCacheConfig()
+                .entryTtl(Duration.ofHours(3))
+                .serializeValuesWith(
+                        RedisSerializationContext.SerializationPair.fromSerializer(RedisSerializer.java())
+                ));
+
+        cacheConfigurations.put("disciplines", RedisCacheConfiguration.defaultCacheConfig()
+                .entryTtl(Duration.ofHours(4))
+                .serializeValuesWith(
+                        RedisSerializationContext.SerializationPair.fromSerializer(RedisSerializer.java())
+                ));
+
+        cacheConfigurations.put("groups", RedisCacheConfiguration.defaultCacheConfig()
+                .entryTtl(Duration.ofHours(2))
+                .serializeValuesWith(
+                        RedisSerializationContext.SerializationPair.fromSerializer(RedisSerializer.java())
+                ));
+
+        cacheConfigurations.put("lessons", RedisCacheConfiguration.defaultCacheConfig()
+                .entryTtl(Duration.ofMinutes(15))
+                .serializeValuesWith(
+                        RedisSerializationContext.SerializationPair.fromSerializer(RedisSerializer.java())
+                ));
+
+        cacheConfigurations.put("studentLists", RedisCacheConfiguration.defaultCacheConfig()
+                .entryTtl(Duration.ofMinutes(10))
+                .serializeValuesWith(
+                        RedisSerializationContext.SerializationPair.fromSerializer(RedisSerializer.java())
+                ));
+
+        cacheConfigurations.put("professorLists", RedisCacheConfiguration.defaultCacheConfig()
+                .entryTtl(Duration.ofMinutes(15))
+                .serializeValuesWith(
+                        RedisSerializationContext.SerializationPair.fromSerializer(RedisSerializer.java())
+                ));
+
         return RedisCacheManager.builder(redisConnectionFactory)
-                .cacheDefaults(cacheConfiguration)
-                .withCacheConfiguration("students",
-                        RedisCacheConfiguration.defaultCacheConfig()
-                                .entryTtl(Duration.ofHours(1))
-                                .serializeValuesWith(
-                                        RedisSerializationContext.SerializationPair.fromSerializer(RedisSerializer.java())
-                                ))
+                .cacheDefaults(defaultCacheConfig)
+                .withInitialCacheConfigurations(cacheConfigurations)
                 .build();
     }
 }

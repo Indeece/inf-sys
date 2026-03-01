@@ -10,6 +10,7 @@ spring:
         default_schema: public
     hibernate:
       ddl-auto: update
+    defer-datasource-initialization: true
 
   config:
     activate:
@@ -25,6 +26,12 @@ spring:
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
+
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+      data-locations: classpath:data.sql
 
 server:
   port: 8081
